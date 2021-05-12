@@ -1,15 +1,11 @@
 Phieu muon sach
 =============================
-Ho ten: Nguyen Van An
+Ho ten: Nguyen Thanh Tin
 sach ban muon: 
 Ma so sach:    Ten sach: 
-11             Android app
-14             Image Processing
-17             Yeu thuong ai cung nhu ai
-23             hai
 24             Giai tich 1
-Ngay muon: 3
-Ngay tra: 5
+Ngay muon: 2
+Ngay tra: 3
                              
                              
 =============================

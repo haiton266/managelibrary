@@ -5,13 +5,24 @@ using namespace std;
 
 void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h)
 		{	
-			int n;cout << "Nhap so sach ban tra: ";cin >> n;cout<<"Nhap ma sach can tra, ngan cach boi enter: "<< endl;
-			cout << (char)19<< " Luu y neu ban nhap ma sach ma ban khong muon thi yeu cau do se khong duoc thuc hien!!!" << endl;
+			bool kt[1000]={false};
+			string st = hs[h].borrow;
+			string s;
+			int muon;
+			for (int i=0;i<=st.length();i++) if (st[i] == ';'){ muon++;kt[stoi(s)] = true;s="";}else s = s + st[i];
+			int n;cout << "Nhap so sach ban tra: ";cin >> n;
+			while (n>muon) {
+				cout << "Ban chi duoc phep tra it hon " << muon << " quyen sach ban da muon!" << endl;
+				cout << "Nhap lai so sach ban tra: ";cin >> n;
+			}
+			cout<<"Nhap ma sach can tra, ngan cach boi enter: "<< endl;
+			//cout << (char)19<< " Luu y neu ban nhap ma sach ma ban khong muon thi yeu cau do se khong duoc thuc hien!!!" << endl;
+			int k=0;
 			while (n>0){
-			n--;
+			n--;k++;
 			int ms;
-			cout << (char)16 << (char)16;cin>>ms;
-			
+			cout << (char)16 << (char)16 << "Nhap ma thu " << k << ": ";cin>>ms;
+			while (kt[ms] == false) {cout <<"Ban chua muon sach nay, nhap lai:";cin>>ms; }
 			cout<<"Ban dang tra quyen: "<<sach[ms].bookname<<endl; 
     		// update tra: 
     		stringstream ss2; ss2 << ms;	string sms = ss2.str();
@@ -51,6 +62,7 @@ void us1(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h
 	cout << "--------------------------------------------------" << endl;
 	unsigned int ms1[5];
     int lc, lc1, lc2;
+	int dem=0;
 	string ngm, ngt;
 	cout<<"nhap lua chon tiep theo:"<<endl;
 	cout<<"1. muon sach"<<endl;
@@ -68,18 +80,49 @@ void us1(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h
 			for (int i = 0; i < n; i++)
 			{
 				cin>>ms1[i];
+
+			}
+			for (int kk=0; kk<hs[h].borrow.length(); kk++)
+			{
+				int num4 ;
+			
+				std::stringstream sss;
+				sss << hs[h].borrow[kk];
+				sss >> num4;
+				for (int jk=0; jk<n; jk++)
+				{
+					if (num4 == ms1[jk])
+					{
+						dem++;
+					}
+				}
+
+			}
+			if(dem >=1 ) 
+			{
+				int ms2[5];
+				cout<<"Ban da nhap trung sach da muon, ban khong duoc muon trung!"<<endl;
+				cout<<"Vui long nhap lai ma so sach can muon: "<<endl;
+				for (int lk=0; lk<n; lk++)
+				{
+					cin>>ms2[lk];
+				}
+				for(int kl=0;kl<n; kl++)
+				{
+					ms1[kl]=ms2[kl];
+				}
 			}
 			cout<<"Ban dang muon quyen: "<<endl;
-			for(int ii=0; ii<n;ii++)
+			for(int iij=0; iij<n;iij++)
 			{
 				int num; 
 				std::stringstream ss;
-				ss << sach[ms1[ii]].amount;
+				ss << sach[ms1[iij]].amount;
 				ss>> num;
 				if (num ==0) {
 				cout<<"Loai sach nay da duoc muon het!!!"<<endl;
 				cout<<"Vui long chon quyen khac!!!";}
-				else {cout<<sach[ms1[ii]].bookname<<endl; }
+				else {cout<<sach[ms1[iij]].bookname<<endl; }
 			}
 			
 			
@@ -104,7 +147,7 @@ void us1(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h
 			}
     	//	cout << "=     " << sach[ms].amount << "       =      ";
     		//
-    		cout << hs[h].borrow;
+    		cout <<"Ma sach muon: "<< hs[h].borrow<<endl;;
 			if (lc2==1) 
 			{
 				ofstream phieumuon("phieumuon.txt");
@@ -255,7 +298,7 @@ void us2(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long sosach,int h)
 				}
 				if (c==2) trasach(hs,sohs,sach,sosach,h);
 			}
-			cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+		
 		}
 	}
 }
@@ -273,16 +316,18 @@ void us3(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 			 	if (convert(sach[i].bookname).find(tensach) < sach[i].bookname.length()) tam.push_back(sach[i]);
 //	cout << tam.size();
 	long g = tam.size()-1;
-	us1(hs,sohs,tam,g,h);
+	us1(hs,sohs,tam,g,h);// Cai nay chi de trinh bay cac sach, con muon quyen nao thi dung ham muon sau; neu kieu la us1 thi se auto goi ham muon, neu us3 us4 thi tu goi
+	// muon(hs,sohs,sach,sosach,h);
 }
 void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){ // dang dang nhap hoc sinh h
 	system("cls");
 	SetColor(0,2);cout << "Dang nhap thanh cong " << endl;SetColor(0,7);
 	cout << " Chao ban: " << hs[h].hoten << " " << (char)1 << endl; 
 	cout << "1. Xem cac sach thu vien co - Muon sach" << endl;
-	cout << "2. Kiem tra sach ban dang muon" << endl;
-	cout <<	"3. Tim kiem sach: " << endl;
-	cout << "4. Loc sach: " << endl;
+	cout << "2. Kiem tra sach ban dang muon - Tra sach" << endl;
+	cout <<	"3. Tim kiem sach - Muon sach " << endl;
+	cout << "4. Loc sach theo the loai - Muon sach " << endl;
+	cout << "6. Doi mat khau: " << endl;
 	int ma;cout << "Nhap chon lua cua ban: ";cin >> ma;
 
 	switch (ma){
@@ -291,7 +336,8 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 		case 2:
 		us2(hs, sohs, sach, sosach,h);
 		int lenh;
-		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		cout << "			-------------------";
+		cout << "\nBan co muon lam gi nua khong? Nhap 1 de tro ve man hinh chon, ky tu bat ki de ket thuc: ";
 		cin >> lenh;
 		if (lenh == 1)
 		{
@@ -300,6 +346,17 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 		}
 		break; // Sy
 		case 3:us3(hs,sohs,sach,sosach,h);break;
+		us2(hs, sohs, sach, sosach,h);
+		//int lenh;
+		cout << "			-------------------";
+		cout << "\nBan co muon lam gi nua khong? Nhap 1 de tro ve man hinh chon, ky tu bat ki de ket thuc: ";
+		cin >> lenh;
+		if (lenh == 1)
+		{
+			system("cls");
+			user(hs, sohs, sach, sosach, h);
+		}
+		break;
 	};
 	}
 

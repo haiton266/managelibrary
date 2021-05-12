@@ -10,26 +10,50 @@ using namespace std;
 	vector<hocsinh> hs;
 	vector<book> sach;
 	bool kkt = false;
-
+void drawbook(){
+	system("cls");
+	SetColor(0,8);
+	GoTo(73,2);cout << "_______________" << endl;
+	for (int i=0;i<=6;i++)
+	{GoTo(73,3+i);cout << "| |            |" << endl;}
+	GoTo(77,9);cout << "___________" << endl;
+	GoTo(78,5);cout << "Manage";
+	GoTo(79,6);cout << "Library";
+	
+	SetColor(0,7);
+	draw(65,1,100,10);
+	GoTo(80,11); 
+	for (int i=0;i<=5;i++) cout << (char)219;
+}
 void dangky(){
+	system("cls");
+	draw(9,2,61,11);
 	string lmk=" ";string st;
+	SetColor(0,2);GoTo(14,4);cout<< "DANG KY";SetColor(0,7);
+	GoTo(11,5);cout << "Nhap tai khoan: ";
+	GoTo(11,6);cout << "Nhap mat khau: " ;
+	GoTo(11,7);cout << "Nhap lai mat khau: ";
 	while (mk != lmk) 
 		{
-		bool kk = true;cout << "Nhap tai khoan: "; cin >> tk;
+		GoTo(26,6);cout << "                 ";
+		GoTo(30,7);cout << "                 ";
+		bool kk = true;GoTo(27,5);cout << "                 ";GoTo(27,5); cin >> tk;
 		while (kk == true) 
 			{
-			for (int i=0;i<=sohs;i++) if (tk == hs[i].getUserName()) {system("cls");cout << "Tai khoan da ton tai" << endl;kk=true;break;}else kk = false;
-			if (kk == true) {cout << "Nhap tai khoan: "; getline(cin,tk);;}
+			for (int i=0;i<=sohs;i++) if (tk == hs[i].getUserName()) {GoTo(11,8);cout << "                                            ";
+																	  GoTo(11,8);cout << "Tai khoan da ton tai" << endl;kk=true;break;}else kk = false;
+			if (kk == true) {GoTo(27,5);cout << "                 ";GoTo(27,5); cin >> tk;}
 			}
-		cout << "Nhap mat khau: " ; cin >> mk;
-		cout << "Nhap lai mat khau: "; cin >> lmk ;
+		GoTo(26,6); cin >> mk;
+		GoTo(30,7); cin >> lmk ;
 		if (mk!=lmk) {
-						system("cls");
-						cout << "Mat khau nhap lai khong chinh xac, vui long dang ky lai" << endl;
+					//	system("cls");
+						GoTo(11,8);cout << "Vui long dang ky lai theo dung yeu cau" << endl;
 					}
 		}
-	system("cls");cout <<"Dang ky thanh cong" << endl;
-	fflush(stdin);cout << "Nhap ho ten cua ban: "; getline(cin,st);
+	GoTo(11,8);cout << "                                           ";
+	GoTo(11,8);SetColor(0,2);cout <<"Dang ky thanh cong" << endl;SetColor(0,7);
+	fflush(stdin);GoTo(11,9);cout << "Nhap ho ten cua ban: "; getline(cin,st);
 	fstream fout;	fout.open("data.csv", ios::out | ios::app);
 	hocsinh tam;
 	fout << tk << "," << mk << "," << st << ",0;" << endl; 
@@ -77,7 +101,7 @@ void dangnhap(){
 	//SetConsoleOutputCP(65001);
 	system("cls");
 	draw(9,2,47,8);
-	GoTo(14,4);cout<< "DANG NHAP";
+	SetColor(0,2);GoTo(14,4);cout<< "DANG NHAP";SetColor(0,7);
 	GoTo(11,5);cout << "Nhap tai khoan: ";
 	GoTo(11,6);cout << "Nhap mat khau: " ; 
 	GoTo(27,5);cin >> tk;
@@ -118,6 +142,8 @@ void update(){
 	// SACH
 };
 int main(){
+    system("title Quan ly thu vien - Gr6 - 20KTMT1");
+
 
 int t=-1;
 ifstream ip("data.csv");
@@ -154,14 +180,17 @@ t=-1;
 sosach = t;
 ip2.close();
 //cout << hs[7].hoten;
+drawbook();
+SetColor(0,4);
 GoTo(10,2);cout << "QUAN LY THU VIEN";
-//drawbook();
+
 GoTo(75,25);cout << "San pham cua nhom 6 - 20KTMT1:";
 	GoTo(78,26);cout << (char)175 << " Ton That Hai";
 	GoTo(78,27);cout << (char)175 << " Ngo Xuan Sy";
-	GoTo(78,28);cout << (char)175 << " Le Pham Cong";
+	GoTo(78,28);cout << (char)175 << " Le Pham Cong";SetColor(0,7);
+SetColor(0,9);
 GoTo(11,5);cout << "1. Dang nhap " << endl;
-GoTo(11,6);cout << "2. Dang ky " << endl;
+GoTo(11,6);cout << "2. Dang ky " << endl;SetColor(0,7);
 GoTo(11,7);int ma; cout << "Nhap lua chon cua ban: ";cin >> ma;
 switch (ma){
 	case 1: dangnhap();break;

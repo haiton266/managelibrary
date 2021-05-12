@@ -57,7 +57,7 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
     cout << "++++++++ DANH SACH CAC SINH VIEN DANG MUON SACH ++++++++ " << endl
          << endl;
     cout << "____________________________________________________" << endl;
-    cout << setw(2) << left << "|";
+    cout << setw(2	) << left << "|";
     cout << setw(4) << left << "STT";
     cout << setw(11) << left << "|";
     cout << setw(23) << left << "Ten sinh vien";
@@ -177,25 +177,25 @@ void ad4(vector<book> sach, long sosach)
 		cout <<sach[i].amount << endl;
 	}
 }
-void ad5(vector<book> sach,long sosach){
-	cout << "Ban muon nhap them bao nhieu quyen sach:	"; int n; cin >> n; fstream fout;	fout.open("danhsachsach.csv", ios::out | ios::app);
+void ad5(vector<book> &sach,long &sosach){
+	cout << "Ban muon nhap them bao nhieu quyen sach:	"; int n; cin >> n; //fstream fout;	fout.open("danhsachsach.csv", ios::out | ios::app);
 	for (int i=1;i<=n;i++) 
 		{
 			cout << "Nhap thong tin ma sach thu " << i << ":" << endl;
 			string ten;string sl;
 			fflush(stdin);
-			cout << "Nhap ten sach: ";getline(cin,ten);	
-			cout << "Nhap so luong: ";cin >> sl;
+			cout << "	Nhap ten sach: ";getline(cin,ten);	
+			cout << "	Nhap so luong: ";cin >> sl;
 			stringstream ss2; ss2 << sosach+i;	string masach = ss2.str();	// CHUYEN SO SANG XAU - 2
-			fout << masach << "," << ten << "," << sl << "\n";
+//			fout << masach << "," << ten << "," << sl << "\n";
 			book tam;
 			tam.code = masach;tam.bookname = ten; tam.amount = sl;
 			sach.push_back(tam);
-		};sosach = sosach + n;
+		};sosach = sosach + n; //cout << sosach;
 		
 	
 }
-void admin(vector<hocsinh> hs,long sohs,vector<book> sach,long sosach){
+void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 	system("cls");
 	SetColor(0,2);cout << "Dang nhap thanh cong " << endl;SetColor(0,7);
 	cout << "1. Tim kiem thong tin sinh vien" << endl;
