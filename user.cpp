@@ -335,6 +335,10 @@ void us4(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 	}
 	SetColor(0,7);
 	cout << "Ban muon loc theo the loai nao?" << endl; cout << (char) 16 << "Nhap so: "; int so;cin >> so;
+	while ((so<0) || (so>k)) 
+		{
+			cout << "Ban nhap khong hop le, nhap lai: ";cin >> so;
+		}
 	tam.push_back(sach[0]);
 	for (int i=1;i<=sosach;i++) if (sach[i].category == ngc[so]) tam.push_back(sach[i]);
 	long sotam =tam.size()-1;
