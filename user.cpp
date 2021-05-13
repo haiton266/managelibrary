@@ -319,6 +319,53 @@ void us3(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 	us1(hs,sohs,tam,g,h);// Cai nay chi de trinh bay cac sach, con muon quyen nao thi dung ham muon sau; neu kieu la us1 thi se auto goi ham muon, neu us3 us4 thi tu goi
 	// muon(hs,sohs,sach,sosach,h);
 }
+void us4(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
+	vector<book> tam;
+	SetColor(0,2);
+	cout << "Hien tai thu vien co cac the loai sau:" << endl;
+	map<string,int> kt;
+	string ngc[1000];
+	//for (int i=1;i<=sosach;i++) kt[sach[i].category] = 1;
+	SetColor(0,3);int k=0;
+	for (int i=1;i<=sosach;i++) kt[sach[i].category]=1;
+	for (auto x:kt)
+	{	k++;
+		cout <<"  " <<k<<". " << x.first << endl; //<< " " << x.second; 
+		ngc[k] = x.first;
+	}
+	SetColor(0,7);
+	cout << "Ban muon loc theo the loai nao?" << endl; cout << (char) 16 << "Nhap so: "; int so;cin >> so;
+	tam.push_back(sach[0]);
+	for (int i=1;i<=sosach;i++) if (sach[i].category == ngc[so]) tam.push_back(sach[i]);
+	long sotam =tam.size()-1;
+	us1(hs,sohs,tam,sotam,h);
+	// muon(hs,sohs,sach,sosach,h);
+}
+void us5(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
+	string mk,lmk;
+	system("cls");SetColor(0,12);
+	cout << " DOI MAT KHAU" << endl;SetColor(0,7);
+ 	cout << "Nhap mat khau moi: " ;cin >> mk;
+ 	while (mk == hs[h].getPassword()) 
+ 		{
+			system("cls");
+			SetColor(0,4);
+			cout << (char)19 << "Ban da nhap trung mat khau cu" << endl;SetColor(0,7);
+			cout << "Nhap mat khau moi: " ;cin >> mk;
+		//	cout << "Nhap lai mat khau moi: ";cin >> lmk;
+		}
+	cout << "Nhap lai mat khau moi: ";cin >> lmk;
+	while (mk!=lmk) 
+		{
+			system("cls");
+			SetColor(0,4);
+			cout << (char)19 << "Mat khau khong trung khop" << endl;SetColor(0,7);
+			cout << "Nhap mat khau moi: " ;cin >> mk;
+			cout << "Nhap lai mat khau moi: ";cin >> lmk;
+		}
+	hs[h].setPassword(mk);
+
+}
 void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){ // dang dang nhap hoc sinh h
 	system("cls");
 	SetColor(0,2);cout << "Dang nhap thanh cong " << endl;SetColor(0,7);
@@ -327,7 +374,7 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 	cout << "2. Kiem tra sach ban dang muon - Tra sach" << endl;
 	cout <<	"3. Tim kiem sach - Muon sach " << endl;
 	cout << "4. Loc sach theo the loai - Muon sach " << endl;
-	cout << "6. Doi mat khau: " << endl;
+	cout << "5. Doi mat khau: " << endl;
 	int ma;cout << "Nhap chon lua cua ban: ";cin >> ma;
 
 	switch (ma){
@@ -349,6 +396,27 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 		us2(hs, sohs, sach, sosach,h);
 		//int lenh;
 		cout << "			-------------------";
+		cout << "\nBan co muon lam gi nua khong? Nhap 1 de tro ve man hinh chon, ky tu bat ki de ket thuc: ";
+		cin >> lenh;
+		if (lenh == 1)
+		{
+			system("cls");
+			user(hs, sohs, sach, sosach, h);
+		}
+		break;
+		case 4: us4(hs,sohs,sach,sosach,h);
+		cout << "		-------------------";
+		cout << "\nBan co muon lam gi nua khong? Nhap 1 de tro ve man hinh chon, ky tu bat ki de ket thuc: ";
+		cin >> lenh;
+		if (lenh == 1)
+		{
+			system("cls");
+			user(hs, sohs, sach, sosach, h);
+		}
+		break;
+		case 5: us5(hs,sohs,sach,sosach,h);
+		SetColor(0,2);cout << "Ban da doi mat khau thanh cong" << endl;SetColor(0,7);
+		cout << "		-------------------";
 		cout << "\nBan co muon lam gi nua khong? Nhap 1 de tro ve man hinh chon, ky tu bat ki de ket thuc: ";
 		cin >> lenh;
 		if (lenh == 1)

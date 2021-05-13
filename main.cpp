@@ -129,7 +129,7 @@ void update(){
 	fout.open("danhsachsachnew.csv", ios::out);
 	for (int i=0;i<=sosach;i++)
 		{
-			fout << sach[i].code << "," <<  sach[i].bookname << "," << sach[i].amount << "\n";
+			fout << sach[i].code << "," <<  sach[i].bookname << "," << sach[i].category << "," << sach[i].amount << "\n";
 		}
 	fin.close();
 	fout.close();
@@ -173,6 +173,7 @@ t=-1;
 	book ta;
 	getline(ip2,ta.code,',');
     getline(ip2,ta.bookname,',');
+    getline(ip2,ta.category,',');
     getline(ip2,ta.amount,'\n');
   //  getline(ip2,ta.price,'\n');
     sach.push_back(ta);
