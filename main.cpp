@@ -19,7 +19,6 @@ void drawbook(){
 	GoTo(77,9);cout << "___________" << endl;
 	GoTo(78,5);cout << "Manage";
 	GoTo(79,6);cout << "Library";
-	
 	SetColor(0,7);
 	draw(65,1,100,10);
 	GoTo(80,11); 
