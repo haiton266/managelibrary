@@ -94,7 +94,7 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 			cout<<"	2. khong in phieu muon"<<endl;
     		cin>>lc2;
     		
-    		cout <<"Ma sach muon: "<< hs[h].borrow<<endl;;
+    	//	cout <<"Ma sach muon: "<< hs[h].borrow<<endl;;
 			if (lc2==1) 
 			{
 				ofstream phieumuon("phieumuon.txt");
