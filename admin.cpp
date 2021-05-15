@@ -57,7 +57,7 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
     cout << "++++++++ DANH SACH CAC SINH VIEN DANG MUON SACH ++++++++ " << endl
          << endl;
     cout << "____________________________________________________" << endl;
-    cout << setw(2	) << left << "|";
+    cout << setw(2) << left << "|";
     cout << setw(4) << left << "STT";
     cout << setw(11) << left << "|";
     cout << setw(23) << left << "Ten sinh vien";
@@ -182,14 +182,15 @@ void ad5(vector<book> &sach,long &sosach){
 	for (int i=1;i<=n;i++) 
 		{
 			cout << "Nhap thong tin ma sach thu " << i << ":" << endl;
-			string ten;string sl;
+			string ten;string sl,theloai;
 			fflush(stdin);
-			cout << "	Nhap ten sach: ";getline(cin,ten);	
+			cout << "	Nhap ten sach: ";getline(cin,ten);fflush(stdin);	
+			cout << "	Nhap the loai: ";getline(cin,theloai);
 			cout << "	Nhap so luong: ";cin >> sl;
 			stringstream ss2; ss2 << sosach+i;	string masach = ss2.str();	// CHUYEN SO SANG XAU - 2
 //			fout << masach << "," << ten << "," << sl << "\n";
 			book tam;
-			tam.code = masach;tam.bookname = ten; tam.amount = sl;
+			tam.code = masach;tam.bookname = ten;tam.category = theloai; tam.amount = sl;
 			sach.push_back(tam);
 		};sosach = sosach + n; //cout << sosach;
 		
@@ -231,8 +232,26 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
             admin(hs, sohs, sach, sosach);
         }
         break; // Sy
-		case 4:ad4(sach,sosach);break; // Cong	
-		case 5:ad5(sach,sosach);break; // Hai
-		//case 6:dangnhap();
+		case 4:ad4(sach,sosach); // Cong	
+		 cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+
+        cin >> lenh;
+        if (lenh == 1)
+        {
+            system("cls");
+            admin(hs, sohs, sach, sosach);
+        }
+        break;
+		case 5:ad5(sach,sosach);// Hai
+		 cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+
+        cin >> lenh;
+        if (lenh == 1)
+        {
+            system("cls");
+            admin(hs, sohs, sach, sosach);
+        }
+        break;
+		
 	}
 }

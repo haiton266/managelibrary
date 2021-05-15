@@ -1,10 +1,12 @@
 Phieu muon sach
 =============================
-Ho ten: Nguyen Van An
+Ho ten: An Sang Dung
 Ma so sach:    Ten sach: 
+24             Giai tich 1
 16             Artifical Intelligence
-Ngay muon: 3
-Ngay tra: 5
+18             Tu duy ky thuat so
+Ngay muon: 5
+Ngay tra: 7
                              
                              
 =============================

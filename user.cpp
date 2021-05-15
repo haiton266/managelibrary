@@ -64,11 +64,11 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 				{
 					n--;
 					int ms;					
-					
+					SetColor(0,4);	cout << "Ban khong duoc muon 1 sach nhieu cuon hoac muon sach co sl = 0 " << endl;SetColor(0,7);
 					cout <<" "<< (char)16 << (char)16 ;cin >> ms;
-					while ((kt[ms]==true) || (sach[ms].amount == "0") )
+					while ((kt[ms]==true) || (sach[ms].amount == "0") || ms<=0 || ms>sosach )
 						{
-							SetColor(0,4);	cout << "Ban khong duoc muon 1 sach nhieu cuon hoac muon sach co sl = 0, nhap lai ma: " << endl;SetColor(0,7);
+							SetColor(0,4);	cout << "Ban can nhap dung theo yeu cau, nhap lai ma: " << endl;SetColor(0,7);
 							cout <<" "<< (char)16 << (char)16 ;cin >> ms;
 						}
 					
