@@ -60,11 +60,12 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 			vector<int> ms1;
 			for (int i=0;i<=st.length();i++) if (st[i] == ';'){ kt[stoi(s)] = true;s="";}else s = s + st[i];
 			cout << "Nhap ma sach ban muon muon: " << endl;
+			SetColor(0,4);	cout << "Ban khong duoc muon 1 sach nhieu cuon hoac muon sach co sl = 0 " << endl;SetColor(0,7);
 			while (n>0)
 				{
 					n--;
 					int ms;					
-					SetColor(0,4);	cout << "Ban khong duoc muon 1 sach nhieu cuon hoac muon sach co sl = 0 " << endl;SetColor(0,7);
+					
 					cout <<" "<< (char)16 << (char)16 ;cin >> ms;
 					while ((kt[ms]==true) || (sach[ms].amount == "0") || ms<=0 || ms>sosach )
 						{
