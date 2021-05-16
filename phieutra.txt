@@ -1,10 +1,10 @@
-Phieu muon sach
+Phieu tra sach
 =============================
 Ho ten: An Sang Dung
 Ma so sach:    Ten sach: 
-27             Vat Ly 2
-29             Linh kien dien tu
-Ngay muon: 16/5/2021
+3              Kinh doanh thoi dai moi
+9              Information system
+Ngay tra: 16/5/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

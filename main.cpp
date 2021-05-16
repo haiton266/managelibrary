@@ -105,40 +105,6 @@ void dangnhap(){
 	GoTo(11,6);cout << "Nhap mat khau: " ; 
 	GoTo(27,5);cin >> tk;
 	GoTo(11,6);cout << "Nhap mat khau: " ; cin >> mk; check(tim(tk));
-}
-void update(){
-	fstream fin, fout;
-	fin.open("data.csv", ios::in);
-	fout.open("datanew.csv", ios::out);
-	for (int i=0;i<=sohs;i++)
-		{
-			fout << hs[i].getUserName() << "," << hs[i].getPassword() << "," << hs[i].hoten << "," << hs[i].borrow << "\n";
-		}
-	fin.close();
-	fout.close();
-
-	// removing the existing file
-	remove("data.csv");
-
-	// renaming the updated file with the existing file name
-	rename("datanew.csv", "data.csv");
-	// SACH
-//	fstream fin, fout;
-	fin.open("danhsachsach.csv", ios::in);
-	fout.open("danhsachsachnew.csv", ios::out);
-	for (int i=0;i<=sosach;i++)
-		{
-			fout << sach[i].code << "," <<  sach[i].bookname << "," << sach[i].category << "," << sach[i].amount << "\n";
-		}
-	fin.close();
-	fout.close();
-
-	// removing the existing file
-	remove("danhsachsach.csv");
-
-	// renaming the updated file with the existing file name
-	rename("danhsachsachnew.csv", "danhsachsach.csv");
-	// SACH
 };
 int main(){
     system("title Quan ly thu vien - Gr6 - 20KTMT1");
@@ -197,7 +163,6 @@ switch (ma){
 	case 2: dangky();
 }
 
-update();
 
 return 0;
 }
