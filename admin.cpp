@@ -7,34 +7,135 @@
 #include "book.cpp"
 #include <sstream>
 #include "goto_draw.cpp"
+#include "update.cpp"
+#include "inkhung.cpp"
+#include <algorithm>
+long kk;
+book2 tam[1000];
+hs2 tam2[1000];
 using namespace std;
+void xoatk(vector<hocsinh> &hs,long &sohs){
+}
+void xoasach(vector<book> &sach,long &sosach){
+}
+void xuat2(hs2 hs[1000], long sohs, vector<book> sach, long sosach)
+{
+    
+    cout << "++++++++ DANH SACH CAC SINH VIEN DANG MUON SACH ++++++++ " << endl
+         << endl;
+    cout << "____________________________________________________" << endl;
+    cout << setw(2) << left << "|";
+    cout << setw(4) << left << "STT";
+    cout << setw(11) << left << "|";
+    cout << setw(23) << left << "Ten sinh vien";
+    cout << setw(2) << left << "|";
+    cout << setw(9) << left << "So luong"
+         << "|" << endl;
+    cout << "____________________________________________________" << endl;
+    int i=0;
+    while (i < sohs)
+    {
+    			i++;
+            cout << setw(3) << left << "|";
+            cout << setw(3) << left << i; 	
+            cout << setw(4) << left << "|";
+            cout << setw(30) << hs[i].hoten;
+            cout << setw(5) << left << "|";
+            cout << setw(6) << left << hs[i].sl << "|" << endl;
+    };
+    cout << "____________________________________________________" << endl
+         << endl;
+    cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+}
+void xuat3(vector<hocsinh> hs, long sohs, book2 sach[1000], long sosach)
+{
+    system("cls");cout << kk;
+    cout << "++++++++++++++++ SO LUONG SACH DANG DUOC MUON +++++++++++++++++" << endl
+         << endl;
+    cout << "______________________________________________________________" << endl;
+    cout << setw(2) << left << "|";
+    cout << setw(4) << left << "Ma ";
+    cout << setw(11) << left << "|";
+    cout << setw(33) << left << "Ten sach";
+    cout << setw(2) << left << "|";
+    cout << setw(9) << left << "So luong"
+         << "|" << endl;
+    cout << "______________________________________________________________" << endl;
+    string st;
+    long long T=0;
+    for (int j = 1; j <= sosach; j++)
+    {
+        
+
+            cout << setw(3) << left << "|";
+            cout << setw(3) << left << sach[j].code; 
+            cout << setw(4) << left << "|";
+            cout << setw(40) << sach[j].bookname;
+            cout << setw(6) << left << "|";
+            cout << setw(5) << left << sach[j].sl << "|" << endl;
+            T = T + sach[j].sl;
+         //   k++;
+        
+    }
+    cout << "______________________________________________________________" << endl;
+    cout << setw(49) << left << "Tong cong	 ";
+    cout << setw(15) << left << T << endl;
+    cout << "______________________________________________________________" << endl
+         << endl;
+    cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
+}
+bool temp1(book2 x, book2 y) 
+{
+       return x.sl>y.sl; 
+};
+bool temp2(book2 x, book2 y) 
+{
+       return x.sl<y.sl; 
+};
+bool cmp1(hs2 x, hs2 y) 
+{
+       return x.sl>y.sl; 
+};
+bool cmp2(hs2 x, hs2 y) 
+{
+       return x.sl<y.sl; 
+};
 
 void ad1(vector<hocsinh> hs,long sohs,vector<book> sach,long sosach){
 	long k=1;
 	
 	string st;
-	cout << "Nhap username cua nguoi ma ban muon tra cuu: "; cin >> st;bool chay = false;
+	cout << "Nhap username cua nguoi ma ban muon tra cuu: "; SetColor(0,9);cin >> st;bool chay = false;SetColor(0,7);
 	for (int i=1;i<=sohs;i++)
 		if (st == hs[i].getUserName()) 
 			{	chay = true;
 				cout << "Ho va ten: " << hs[i].hoten << endl;
-				if (hs[i].borrow == "0;") cout << "!!! Hien tai hoc sinh nay chua muon sach cua thu vien" << endl;
+				if (hs[i].borrow == "0;") {SetColor(0,4);cout << " !!! Hien tai hoc sinh nay chua muon sach cua thu vien" << endl;}
 				else {
-				cout << "Cac sach dang muon: " << endl; 
+				SetColor(0,2);cout << "Cac sach dang muon: " << endl; SetColor(0,7);
+				cout << "\nXin Chao " << hs[i].hoten << " , cac sach ban dang muon la: " << endl
+					 << endl;
+				inkhung();
 				st = hs[i].borrow;
 				string sst;
 				for (int i=0;i<st.length();i++) if (st[i] == ';')
 													{
+														
 														int num; 
 														stringstream ss;  
 														ss << sst;  
 														ss >> num; 	// CHUYEN XAU SANG SO - 1
-														cout << k << ". " << sach[num].bookname << endl;
+														cout << setw(3) << left << "|";
+														cout << setw(3) << left << sach[num].code;
+														cout << setw(4) << left << "|";
+														cout << setw(40) << sach[num].bookname << "|" << endl;
 														k++;
 														sst ="";
 													}
 													else sst = sst + st[i];
+				
 				}
+				break;//kiem duoc thi dung ko kiem nua
 			}
 	if (chay == false) {
 		system("cls");
@@ -50,7 +151,7 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
     string st;
     int i = 1;
     int sl[20];
-    for (int i = 1; i <= 19; i++)
+    for (int i = 1; i <= sohs; i++)
     {
         sl[i] = 0;
     }
@@ -62,7 +163,7 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
     cout << setw(11) << left << "|";
     cout << setw(23) << left << "Ten sinh vien";
     cout << setw(2) << left << "|";
-    cout << setw(9) << left << "so luong"
+    cout << setw(9) << left << "So luong"
          << "|" << endl;
     cout << "____________________________________________________" << endl;
     for (int i = 1; i <= sohs; i++)
@@ -78,44 +179,43 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
             else
                 sst = sst + st[j];
     }
-
+	
     int j = 1;
     while (i <= sohs)
     {
         t = hs[i].borrow;
-        if (t != "0;")
-        {
+        if (t == "0;") sl[i] = 0;
+        
             cout << setw(3) << left << "|";
-            cout << setw(3) << left << j;
+            cout << setw(3) << left << j; 	tam2[j].hoten = hs[i].hoten;tam2[j].sl = sl[i];
             cout << setw(4) << left << "|";
             cout << setw(30) << hs[i].hoten;
             cout << setw(5) << left << "|";
             cout << setw(6) << left << sl[i] << "|" << endl;
-            j++;
-        }
+           
+        	j++;
         i++;
-    };
+    };kk=j;
     cout << "____________________________________________________" << endl
          << endl;
     cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 }
 void ad3(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
 {
-
-    int sl[24];
+	
+    int sl[sosach+1];
     int T = 0;
-    for (int i = 1; i <= 23; i++)
+    for (int i = 1; i <= sosach; i++)
     {
         sl[i] = 0;
     }
     long k = 1;
     system("cls");
-
-    cout << "++++++++++++++++ SO LUONG SACH SINH VIEN DA MUON +++++++++++++++++" << endl
+    cout << "++++++++++++++++ SO LUONG SACH DANG DUOC MUON +++++++++++++++++" << endl
          << endl;
     cout << "______________________________________________________________" << endl;
     cout << setw(2) << left << "|";
-    cout << setw(4) << left << "STT";
+    cout << setw(4) << left << "Ma ";
     cout << setw(11) << left << "|";
     cout << setw(33) << left << "Ten sach";
     cout << setw(2) << left << "|";
@@ -130,22 +230,20 @@ void ad3(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
         for (int i = 0; i < st.length(); i++)
             if (st[i] == ';')
             {
-                int num;
-                stringstream ss;
-                ss << sst;
-                ss >> num;
+                int num=stoi(sst);
                 sl[num] = sl[num] + 1;
                 sst = "";
             }
             else
                 sst = sst + st[i];
-    };
-    for (int j = 1; j <= 23; j++)
+    };kk=0;
+    for (int j = 1; j <= sosach; j++)
     {
         if (sl[j] != 0)
         {
+        	kk++;
             cout << setw(3) << left << "|";
-            cout << setw(3) << left << k;
+            cout << setw(3) << left << sach[j].code; tam[kk].code = sach[j].code;tam[kk].bookname =  sach[j].bookname;tam[kk].sl = sl[j];
             cout << setw(4) << left << "|";
             cout << setw(40) << sach[j].bookname;
             cout << setw(6) << left << "|";
@@ -165,7 +263,7 @@ void ad4(vector<book> sach, long sosach)
 {	
 	cout<<"Cac sach hien tai cua thu vien va so luong:" << endl;
 	cout << "--------------------------------------------------" << endl;
-	cout <<"Code|" << "      Ten sach       " << " 	       | So luong" << endl;
+	cout <<"Code|" << "      Ten sach       " << " 	       | So luong |" << endl;
 	cout << "--------------------------------------------------" << endl;
 	for(int i=1; i<sosach;i++)
 	{	
@@ -174,36 +272,45 @@ void ad4(vector<book> sach, long sosach)
 		cout <<sach[i].bookname; 
 		for (int ii=sach[i].bookname.length();ii<=36;ii++) if (ii==33)cout <<"| ";else cout << " ";
 		
-		cout <<sach[i].amount << endl;
+		cout <<sach[i].amount;
+		string tt=sach[i].amount;
+		for (int i=1;i<7-tt.length();i++) cout << " ";
+		cout << "|" << endl;
 	}
 }
-void ad5(vector<book> &sach,long &sosach){
-	cout << "Ban muon nhap them bao nhieu quyen sach:	"; int n; cin >> n; //fstream fout;	fout.open("danhsachsach.csv", ios::out | ios::app);
+void ad5(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
+	cout << "Ban muon nhap them bao nhieu dau sach:	"; int n; cin >> n; //fstream fout;	fout.open("danhsachsach.csv", ios::out | ios::app);
 	for (int i=1;i<=n;i++) 
 		{
-			cout << "Nhap thong tin ma sach thu " << i << ":" << endl;
+			SetColor(0,2);cout << "Nhap thong tin ma sach thu " << i << ":" << endl;
 			string ten;string sl,theloai;
 			fflush(stdin);
-			cout << "	Nhap ten sach: ";getline(cin,ten);fflush(stdin);	
-			cout << "	Nhap the loai: ";getline(cin,theloai);
-			cout << "	Nhap so luong: ";cin >> sl;
+			SetColor(0,6);
+			cout << "  " << (char)16 << "Nhap ten sach: ";getline(cin,ten);fflush(stdin);	
+			cout << "  " << (char)16 <<"Nhap the loai: ";getline(cin,theloai);
+			cout << "  " << (char)16 <<"Nhap so luong: ";cin >> sl;
+			cout << "-------" << endl;
 			stringstream ss2; ss2 << sosach+i;	string masach = ss2.str();	// CHUYEN SO SANG XAU - 2
 //			fout << masach << "," << ten << "," << sl << "\n";
 			book tam;
 			tam.code = masach;tam.bookname = ten;tam.category = theloai; tam.amount = sl;
 			sach.push_back(tam);
 		};sosach = sosach + n; //cout << sosach;
-		
+		update(hs,sohs,sach,sosach,0);
+		SetColor(0,7);
 	
 }
+
 void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 	system("cls");
 	SetColor(0,2);cout << "Dang nhap thanh cong " << endl;SetColor(0,7);
 	cout << "1. Tim kiem thong tin sinh vien" << endl;
-	cout << "2. Thong ke cac SV dang muon" << endl;
-	cout << "3. SL va cac sach dang duoc sinh vien muon" << endl;
-	cout << "4. SL va cac sach hien tai cua thu vien" << endl;
-	cout << "5. Nhap vao sach moi" << endl;
+	cout << "2. Thong ke cac SV dang muon - Sap xep - Xoa TK" << endl;
+	cout << "3. Thong ke sach dang duoc sinh vien muon - Sap xep" << endl;
+	cout << "4. Thong ke cac sach hien tai cua thu vien - Xoa dau sach" << endl;
+	cout << "5. Nhap them dau sach moi" << endl;
+	//cout << "6. Xoa tai khoan nguoi dung" << endl;
+	//cout << "6. Xoa dau sach" << endl;
 	//cout << "6. Dang xuat" << endl;
 	int ma;cout << "Nhap chon lua cua ban: ";cin >> ma;
 	switch (ma){
@@ -212,46 +319,138 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 											int lenh;cin >> lenh;if (lenh == 1){system("cls");admin(hs,sohs,sach,sosach);}break; // Hai
 		case 2:
         ad2(hs, sohs, sach, sosach);
-        cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
-
+        cout << "\nBan co muon lam gi nua khong" <<endl;
+		cout <<"	1. Tro ve man hinh chon " << endl;
+		cout <<"	2. Sap xep giam dan theo so luong sach" << endl;
+		cout <<"	3. Sap xep tang dan theo so luong sach" << endl;
+		cout <<"	4. Xoa tai khoan" << endl;
         cin >> lenh;
-        if (lenh == 1)
-        {
-            system("cls");
-            admin(hs, sohs, sach, sosach);
-        }
-        break; // Sy
+       // switch (lenh)
+        	if (lenh == 1) {
+			
+            	system("cls");
+            	admin(hs, sohs, sach, sosach);
+            	break;}
+        	if (lenh == 2 ){
+			    
+        		system("cls");
+        		sort(tam2+1,tam2+sohs+1,cmp1);
+        		xuat2(tam2, sohs, sach,sosach);
+        		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		
+        		cin >> lenh;
+			        if (lenh == 1)
+			        {
+			            system("cls");
+			            admin(hs, sohs, sach, sosach);
+			        }
+			        break;
+        	}
+        	if (lenh==3){
+			
+        		system("cls");
+        		sort(tam2+1,tam2+sohs+1,cmp2);
+        		xuat2(tam2, sohs, sach,sosach);
+        		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		
+        		cin >> lenh;
+			        if (lenh == 1)
+			        {
+			            system("cls");
+			            admin(hs, sohs, sach, sosach);
+			        }
+			        break;
+			    }
+			if (lenh==4) {
+				xoatk(hs,sohs);
+				}
+				cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		
+        		cin >> lenh;
+			        if (lenh == 1)
+			        {
+			            system("cls");
+			            admin(hs, sohs, sach, sosach);
+			        }
+			        break;
+			
     case 3:
         ad3(hs, sohs, sach, sosach);
-        cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+        cout << "\nBan co muon lam gi nua khong" <<endl;
+		cout <<"	1. Tro ve man hinh chon " << endl;
+		cout <<"	2. Sap xep giam dan theo so luong sach" << endl;
+		cout <<"	3. Sap xep tang dan theo so luong sach" << endl;
 
         cin >> lenh;
-        if (lenh == 1)
-        {
-            system("cls");
-            admin(hs, sohs, sach, sosach);
-        }
-        break; // Sy
-		case 4:ad4(sach,sosach); // Cong	
-		 cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
-
-        cin >> lenh;
-        if (lenh == 1)
-        {
-            system("cls");
-            admin(hs, sohs, sach, sosach);
-        }
-        break;
-		case 5:ad5(sach,sosach);// Hai
-		 cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
-
-        cin >> lenh;
-        if (lenh == 1)
-        {
-            system("cls");
-            admin(hs, sohs, sach, sosach);
-        }
-        break;
+       // switch (lenh)
+        	if (lenh == 1) {
+			
+            	system("cls");
+            	admin(hs, sohs, sach, sosach);
+            	break;}
+        	if (lenh == 2 ){
+			    
+        		system("cls");
+        		sort(tam+1,tam+kk+1,temp1);
+        		xuat3(hs, sohs, tam, kk);
+        		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
 		
+        		cin >> lenh;
+			        if (lenh == 1)
+			        {
+			            system("cls");
+			            admin(hs, sohs, sach, sosach);
+			        }
+			        break;
+        	}
+        	if (lenh==3){
+			
+        		system("cls");
+        		sort(tam+1,tam+kk+1,temp2);
+        		xuat3(hs, sohs, tam, kk);
+        		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		
+        		cin >> lenh;
+			        if (lenh == 1)
+			        {
+			            system("cls");
+			            admin(hs, sohs, sach, sosach);
+			        }
+			        break;
+			    }
+		//ketthuc();
+		 // Sy
+		case 4:ad4(sach,sosach); // Cong	
+		cout << "\nNhap 1 de tro ve man hinh chon, 2 Xoa dau sach, bat ky de ket thuc: ";
+
+        cin >> lenh;
+        if (lenh == 1)
+        {
+            system("cls");
+            admin(hs, sohs, sach, sosach);
+        }
+        if (lenh ==2) {
+        	xoasach(sach,sosach);
+        	cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+
+        cin >> lenh;
+        if (lenh == 1)
+        {
+            system("cls");
+            admin(hs, sohs, sach, sosach);
+        }
+        break;
+		}
+		 
+		case 5:ad5(hs,sohs,sach,sosach);// Hai
+		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+
+        cin >> lenh;
+        if (lenh == 1)
+        {
+            system("cls");
+            admin(hs, sohs, sach, sosach);
+        }
+        break;
 	}
 }

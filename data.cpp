@@ -24,5 +24,9 @@ string getPassword(){
 	return pw;
 }
 };
+struct hs2{
+	string hoten;
+	int sl;
+};
 
 

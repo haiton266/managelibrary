@@ -155,6 +155,7 @@ GoTo(75,25);cout << "San pham cua nhom 6 - 20KTMT1:";
 	GoTo(78,27);cout << (char)175 << " Ngo Xuan Sy";
 	GoTo(78,28);cout << (char)175 << " Le Pham Cong";SetColor(0,7);
 SetColor(0,9);
+//SetConsoleOutputCP(65001);
 GoTo(11,5);cout << "1. Dang nhap " << endl;
 GoTo(11,6);cout << "2. Dang ky " << endl;SetColor(0,7);
 GoTo(11,7);int ma; cout << "Nhap lua chon cua ban: ";cin >> ma;

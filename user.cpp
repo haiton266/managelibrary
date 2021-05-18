@@ -3,6 +3,8 @@
 #include "goto_draw.cpp"
 #include <ctime>
 #include "update.cpp"
+#include "inkhung.cpp"
+
 using namespace std;
 string get_time(){
 	time_t now = time(0);
@@ -18,6 +20,14 @@ void intime(){
 	cout << " Thoi gian: "<< get_time() << endl;
 	cout << " Ngay: "<< get_day() << endl;
 }
+void thanhcong(){
+	cout << "------------------" << endl;
+	SetColor(0,9);	
+	cout << " Yeu cau cua ban da duoc thuc hien" << endl;
+	intime();
+	SetColor(0,7);
+	cout << "------------------" << endl;
+}
 void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h)
 		{	
 			bool kt[1000]={false};
@@ -29,7 +39,7 @@ void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,i
 			int n;cout << "Nhap so sach ban tra: ";cin >> n;
 			while (n>muon) {
 				cout << "Ban chi duoc phep tra it hon " << muon << " quyen sach ban da muon!" << endl;
-				cout << "Nhap lai so sach ban tra: ";cin >> n;
+				cout << (char)16 << "Nhap lai so sach ban tra: ";cin >> n;
 			}
 			if (n>0){
 			vector<int> ms1;
@@ -41,10 +51,10 @@ void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,i
 			n--;k++;
 			int ms;
 			cout << (char)16 << (char)16 << "Nhap ma thu " << k << ": ";cin>>ms;
-			while (kt[ms] == false) {cout <<"Ban chua muon sach nay. ";cout << "Cac sach ma sach ban dang muon: "; cout << hs[h].borrow << endl;
+			while (kt[ms] == false) {cout <<"Ban chua muon sach nay ";cout << "Cac sach ma sach ban dang muon: "; cout << hs[h].borrow << endl;
 			cout <<"Nhap lai:";cin>>ms; }
 			ms1.push_back(ms);kt[ms]=false;
-			cout<<"Ban dang tra quyen: "<<sach[ms].bookname<<endl; 
+			SetColor(0,2);cout<<"Ban dang tra quyen: "<<sach[ms].bookname<<endl;SetColor(0,7);
     		// update tra: 
     		stringstream ss2; ss2 << ms;	string sms = ss2.str();
     		string st = hs[h].borrow;
@@ -63,12 +73,7 @@ void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,i
     		stringstream sss; sss << numm;	sach[ms].amount = sss.str();
 			}
 			n=nn;
-			cout << "---------" << endl;
-			SetColor(0,9);
-			cout << (char)19<< " Yeu cau cua ban da duoc thuc hien" << endl;
-			intime();
-			SetColor(0,7);
-			cout << "---------" << endl;
+			thanhcong();
 			
 			cout<<"Ban co muon in phieu khong?"<<endl;
 			cout<<"	1. In phieu muon"<<endl;
@@ -156,13 +161,7 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 		//	cout << ms1[1] << endl;
 			string ngm, ngt;
 			int lc2;
-			   
-			   cout << "------------------" << endl;
-			   SetColor(0,9);	
-			   cout << " Yeu cau cua ban da duoc thuc hien" << endl;
-			   intime();
-			   SetColor(0,7);
-			   cout << "------------------" << endl;
+			thanhcong();
 			cout<<"Ban co muon in phieu khong?"<<endl;
 			cout<<"	1. In phieu muon"<<endl;
 			cout<<"	2. Khong in"<<endl;
@@ -245,13 +244,7 @@ void us2(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long sosach,int h)
 			{
 				cout << "\nXin Chao " << hs[i].hoten << " , cac sach ban dang muon la: " << endl
 					 << endl;
-				cout << "___________________________________________________" << endl;
-				cout << setw(2) << left << "|";
-				cout << setw(4) << left << "Ma ";
-				cout << setw(11) << left << "|";
-				cout << setw(33) << left << "Ten sach"
-					 << "|" << endl;
-				cout << "___________________________________________________" << endl;
+				inkhung();
 				st = hs[i].borrow;
 				string sst;
 				for (int i = 0; i < st.length(); i++)
@@ -284,15 +277,15 @@ void us2(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long sosach,int h)
 				{
 					ofstream outfile;
 					outfile.open("output.txt");
-					outfile << "\nXin Chao " << hs[i].hoten << " , cac sach ban dang muon la: " << endl
+					outfile << "Xin Chao " << hs[i].hoten << " , cac sach ban dang muon la: " << endl
 							<< endl;
-					outfile << "___________________________________________________" << endl;
+					outfile << "---------------------------------------------------" << endl;
 					outfile << setw(2) << left << "|";
 					outfile << setw(4) << left << "Ma ";
 					outfile << setw(11) << left << "|";
 					outfile << setw(33) << left << "Ten sach"
 							<< "|" << endl;
-					outfile << "___________________________________________________" << endl;
+					outfile << "---------------------------------------------------" << endl;
 					st = hs[i].borrow;
 					string sst;
 					for (int i = 0; i < st.length(); i++)
@@ -313,7 +306,8 @@ void us2(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long sosach,int h)
 						else
 							sst = sst + st[i];
 					}
-					outfile << "___________________________________________________" << endl;
+					outfile << "---------------------------------------------------" << endl;
+					thanhcong();
 				    break;
 				}
 				if (c==2) trasach(hs,sohs,sach,sosach,h);
@@ -402,6 +396,7 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 	cout <<	"3. Tim kiem sach - Muon sach " << endl;
 	cout << "4. Loc sach theo the loai - Muon sach " << endl;
 	cout << "5. Doi mat khau: " << endl;
+	
 	int ma;cout << "Nhap chon lua cua ban: ";cin >> ma;
 
 	switch (ma){
@@ -461,6 +456,7 @@ void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 			user(hs, sohs, sach, sosach, h);
 		}
 		break;
+		
 	};
 	}
 

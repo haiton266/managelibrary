@@ -2,9 +2,9 @@ Phieu muon sach
 =============================
 Ho ten: An Sang Dung
 Ma so sach:    Ten sach: 
-27             Vat Ly 2
-29             Linh kien dien tu
-Ngay muon: 16/5/2021
+16             Artifical Intelligence
+10             English - Vietnamese Dictionary
+Ngay muon: 18/5/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

@@ -7,3 +7,8 @@ struct book{
 	string amount;
 //	string price;
 };
+struct book2{
+	string code;
+	string bookname;
+	int sl;
+};

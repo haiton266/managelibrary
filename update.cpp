@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 void update(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 	fstream fin, fout;

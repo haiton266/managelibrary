@@ -1,20 +1,20 @@
 Ma Sach,Ten sach,The loai,1
-1,Hat giong tam hon 1,Cuoc song,11
+1,Hat giong tam hon 1,Cuoc song,10
 2,Giai tich 2,Dai cuong,98
-3,Kinh doanh thoi dai moi,Kinh doanh,5
+3,Kinh doanh thoi dai moi,Kinh doanh,4
 4,SQL,Tin hoc,10
 5,JavaScript,Tin hoc,5
 6,Microsoft .NET,Tin hoc,9
 7,OOP in Java,Tin hoc,10
-8,C++ Advance,Tin hoc,123
-9,Information system,Tin hoc,5
-10,English - Vietnamese Dictionary,Tu dien,5
+8,C++ Advance,Tin hoc,122
+9,Information system,Tin hoc,4
+10,English - Vietnamese Dictionary,Tu dien,4
 11,Android app,Tin hoc,5
 12,Human Compatible,Tin hoc,4234
 13,Machine Learning for Designer,Tin hoc,44
 14,Image Processing,Tin hoc,5
 15,STM32,Dien tu,63
-16,Artifical Intelligence,Tin hoc,25
+16,Artifical Intelligence,Tin hoc,24
 17,Yeu thuong ai cung nhu ai,Cuoc song,4
 18,Tu duy ky thuat so,Tin hoc,2
 19,5.0 in the furture,Tin hoc,4
@@ -24,7 +24,18 @@ Ma Sach,Ten sach,The loai,1
 23,Vat Ly,Dai cuong,1
 24,Giai tich 1,Dai cuong,1
 25,Solution E1,Anh van,7
-26,FBI - USA,trinh tham,54
+26,FBI - USA,Trinh tham,55
 27,Vat Ly 2,Dai cuong,9
 28,Vat Ly ban dan,Dai cuong,10
-29,Linh kien dien tu,Dien tu,22
+29,Linh kien dien tu,Dien tu,21
+30,Trieu Dai Viet Nam,Lich su,3
+31,Lich Su Van Minh The Gioi,Lich su,1
+32,Du Hanh Nam Ha,Lich su,2
+33,Can Ham Toi,Trinh tham,5
+34,Hoi Tho Cuoi Cung,Trinh tham,11
+35,Du Lieu Tu Than,Trinh tham,11
+36,Sherlock Homes - tap 1,Trinh tham,12
+37,Sherlock Homes - tap 2,Trinh tham,11
+38,Sherlock Homes - tap 3,Trinh tham,16
+39,Dam That Bai,Kinh doanh,17
+40,Kinh Te 4,Kinh doanh,1
