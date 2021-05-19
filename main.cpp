@@ -5,6 +5,7 @@
 #include "book.cpp"
 #include <windows.h>
 #include "goto_draw.cpp"
+#include "docfile.cpp"
 using namespace std;
 	int tt=0;		string mk;		string tk; long sohs,sosach;
 	vector<hocsinh> hs;
@@ -109,42 +110,7 @@ void dangnhap(){
 int main(){
     system("title Quan ly thu vien - Gr6 - 20KTMT1");
 
-
-int t=-1;
-ifstream ip("data.csv");
-  string username;
-  string password;
-  string borroww;
-  string hotenn;
-  while (ip.peek()!=EOF)
-{
-	t++;
-    getline(ip,username,',');
-    getline(ip,password,',');
-    getline(ip,hotenn,',');
-    getline(ip,borroww,'\n');
-   
-	hocsinh tam; tam.setUserName(username);tam.setPassword(password);tam.hoten = hotenn;tam.borrow = borroww;	
-    hs.push_back(tam);
-  }
-sohs = t;
-ip.close();
-
-ifstream ip2("danhsachsach.csv");
-t=-1;
-  while (ip2.peek()!=EOF)
-{
-	t++;
-	book ta;
-	getline(ip2,ta.code,',');
-    getline(ip2,ta.bookname,',');
-    getline(ip2,ta.category,',');
-    getline(ip2,ta.amount,'\n');
-  //  getline(ip2,ta.price,'\n');
-    sach.push_back(ta);
-  }
-sosach = t;
-ip2.close();
+docfile(hs,sohs,sach,sosach);
 //cout << hs[7].hoten;
 drawbook();
 SetColor(0,4);

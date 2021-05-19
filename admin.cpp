@@ -10,14 +10,40 @@
 #include "update.cpp"
 #include "inkhung.cpp"
 #include <algorithm>
+#include "docfile.cpp"
 long kk;
 book2 tam[1000];
 hs2 tam2[1000];
+
 using namespace std;
-void xoatk(vector<hocsinh> &hs,long &sohs){
+void xoatk(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
+	map<string,int> chk;
+	for (int i=0;i<=sohs;i++) chk[hs[i].getUserName()] = 1;
+	int n;
+	//system("cls");
+	cout << "Ban muon xoa bao nhieu tai khoan: ";SetColor(0,2);cin >> n;SetColor(0,7);
+	while ((n>sohs) || (n<=0)) 
+		{cout << "Nhap hop le: " ; cin >> n;
+		}
+	sohs = sohs - n;
+	cout << "Nhap cac username, ngan cach boi enter" << endl;
+	while (n>0){
+		n--;
+		string st;
+		cout << (char)16; cin >> st;
+		while ((chk[st] == 0) || (st=="admin")) {
+			SetColor(0,4);cout << "UserName khong ton tai, nhap lai";SetColor(0,7);cout << (char)16;cin >> st;
+		}
+		chk[st] = 0;
+		update2(hs,sohs,sach,sosach,chk);
+		hs.resize(0);
+		sach.resize(0);
+		docfile(hs,sohs,sach,sosach);
+	}
+	
+	
 }
-void xoasach(vector<book> &sach,long &sosach){
-}
+
 void xuat2(hs2 hs[1000], long sohs, vector<book> sach, long sosach)
 {
     
@@ -307,7 +333,7 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 	cout << "1. Tim kiem thong tin sinh vien" << endl;
 	cout << "2. Thong ke cac SV dang muon - Sap xep - Xoa TK" << endl;
 	cout << "3. Thong ke sach dang duoc sinh vien muon - Sap xep" << endl;
-	cout << "4. Thong ke cac sach hien tai cua thu vien - Xoa dau sach" << endl;
+	cout << "4. Thong ke cac sach hien tai cua thu vien" << endl;
 	cout << "5. Nhap them dau sach moi" << endl;
 	//cout << "6. Xoa tai khoan nguoi dung" << endl;
 	//cout << "6. Xoa dau sach" << endl;
@@ -362,7 +388,7 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 			        break;
 			    }
 			if (lenh==4) {
-				xoatk(hs,sohs);
+				xoatk(hs,sohs,sach,sosach);
 				}
 				cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
 		
@@ -420,18 +446,8 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 			    }
 		//ketthuc();
 		 // Sy
-		case 4:ad4(sach,sosach); // Cong	
-		cout << "\nNhap 1 de tro ve man hinh chon, 2 Xoa dau sach, bat ky de ket thuc: ";
-
-        cin >> lenh;
-        if (lenh == 1)
-        {
-            system("cls");
-            admin(hs, sohs, sach, sosach);
-        }
-        if (lenh ==2) {
-        	xoasach(sach,sosach);
-        	cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
+		case 4:ad4(sach,sosach); // Cong  
+        cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
 
         cin >> lenh;
         if (lenh == 1)
@@ -440,7 +456,6 @@ void admin(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
             admin(hs, sohs, sach, sosach);
         }
         break;
-		}
 		 
 		case 5:ad5(hs,sohs,sach,sosach);// Hai
 		cout << "\nBan co muon lam gi nua khong, nhap 1 de tro ve man hinh chon, 2 de ket thuc: ";
