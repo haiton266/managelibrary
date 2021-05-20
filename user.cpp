@@ -385,7 +385,7 @@ void us5(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
 			cout << "Nhap lai mat khau moi: ";cin >> lmk;
 		}
 	hs[h].setPassword(mk);
-
+	update(hs,sohs,sach,sosach,h);
 }
 void user(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){ // dang dang nhap hoc sinh h
 	system("cls");

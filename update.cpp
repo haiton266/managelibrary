@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-void update(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,int h){
+void update(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach, int h){
 	fstream fin, fout;
 	fin.open("data.csv", ios::in);
 	fout.open("datanew.csv", ios::out);

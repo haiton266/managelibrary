@@ -12,8 +12,8 @@
 #include <algorithm>
 #include "docfile.cpp"
 long kk;
-book2 tam[1000];
-hs2 tam2[1000];
+book2 *tam;
+hs2 *tam2;
 
 using namespace std;
 void xoatk(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
@@ -44,7 +44,7 @@ void xoatk(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach){
 	
 }
 
-void xuat2(hs2 hs[1000], long sohs, vector<book> sach, long sosach)
+void xuat2(hs2 *hs, long sohs, vector<book> sach, long sosach)
 {
     
     cout << "++++++++ DANH SACH CAC SINH VIEN DANG MUON SACH ++++++++ " << endl
@@ -73,7 +73,7 @@ void xuat2(hs2 hs[1000], long sohs, vector<book> sach, long sosach)
          << endl;
     cout << "\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++";
 }
-void xuat3(vector<hocsinh> hs, long sohs, book2 sach[1000], long sosach)
+void xuat3(vector<hocsinh> hs, long sohs, book2 *sach, long sosach)
 {
     system("cls");cout << kk;
     cout << "++++++++++++++++ SO LUONG SACH DANG DUOC MUON +++++++++++++++++" << endl
@@ -126,7 +126,7 @@ bool cmp2(hs2 x, hs2 y)
 {
        return x.sl<y.sl; 
 };
-void xuat4(vector<hocsinh> hs,long sohs,book2 sach[1000],long sosach)
+void xuat4(vector<hocsinh> hs,long sohs,book2 *sach,long sosach)
 {	system("cls");
 	cout<<"Cac sach hien tai cua thu vien va so luong:" << endl;
 	cout << "--------------------------------------------------" << endl;
@@ -225,13 +225,14 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
     }
 	
     int j = 1;
+    tam2 = new hs2[sohs+1];
     while (i <= sohs)
     {
         t = hs[i].borrow;
         if (t == "0;") sl[i] = 0;
         
             cout << setw(3) << left << "|";
-            cout << setw(3) << left << j; 	tam2[j].hoten = hs[i].hoten;tam2[j].sl = sl[i];
+            cout << setw(3) << left << j; tam2[j].hoten = hs[i].hoten;tam2[j].sl = sl[i];
             cout << setw(4) << left << "|";
             cout << setw(30) << hs[i].hoten;
             cout << setw(5) << left << "|";
@@ -280,7 +281,7 @@ void ad3(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
             }
             else
                 sst = sst + st[i];
-    };kk=0;
+    };kk=0;tam=new book2[sosach+1];
     for (int j = 1; j <= sosach; j++)
     {
         if (sl[j] != 0)
@@ -309,7 +310,7 @@ void ad4(vector<book> sach, long sosach)
 	cout << "--------------------------------------------------" << endl;
 	cout <<"Code|" << "      Ten sach       " << " 	       | So luong |" << endl;
 	cout << "--------------------------------------------------" << endl;
-	kk=0;
+	kk=0;tam=new book2[sosach+1];
 	for(int i=1; i<sosach;i++)
 	{	kk++;
 		if (i<10) cout << " ";
