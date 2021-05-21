@@ -2,9 +2,9 @@ Phieu muon sach
 =============================
 Ho ten: Ton That Hai
 Ma so sach:    Ten sach: 
-23             Vat Ly
-28             Vat Ly ban dan
-Ngay muon: 20/5/2021
+1              Hat giong tam hon 1
+36             Sherlock Homes - tap 1
+Ngay muon: 21/5/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

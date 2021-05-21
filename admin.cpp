@@ -158,7 +158,7 @@ void ad1(vector<hocsinh> hs,long sohs,vector<book> sach,long sosach){
 				else {
 				SetColor(0,2);cout << "Cac sach dang muon: " << endl; SetColor(0,7);
 			//	cout << "\nXin Chao " << hs[i].hoten << " , cac sach ban dang muon la: " << endl
-					 << endl;
+					 //<< endl;
 				inkhung();
 				st = hs[i].borrow;
 				string sst;

@@ -30,8 +30,8 @@ void thanhcong(){
 }
 void trasach(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int h)
 		{	
-			bool kt[1000]={false};
-			
+			bool *kt = new bool[sosach+1];
+			for (int i=1;i<=sosach;i++) kt[i]=false;
 			string st = hs[h].borrow;
 			string s;
 			int muon;
@@ -128,7 +128,8 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 			if (n>0){
 			
 			int nn=n;
-			bool kt[1000]={false};
+			bool *kt = new bool[sosach+1];
+			for (int i=1;i<=sosach;i++) kt[i]=false;
 			string st = hs[h].borrow;
 			string s;
 			vector<int> ms1;
@@ -141,7 +142,7 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach,int 
 					int ms;					
 					
 					cout <<" "<< (char)16 << (char)16 ;cin >> ms;
-					while ((kt[ms]==true) || (sach[ms].amount == "0") || ms<=0 || ms>sosach )
+					while ( ms<=0 || (kt[ms]==true) || (sach[ms].amount == "0") || ms>sosach )
 						{
 							SetColor(0,4);	cout << "Ban can nhap dung theo yeu cau, nhap lai ma: " << endl;
 							cout << "Cac sach ma sach ban dang muon: "; cout << hs[h].borrow << endl;SetColor(0,7);

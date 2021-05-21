@@ -1,11 +1,11 @@
 Ma Sach,Ten sach,The loai,1
-1,Hat giong tam hon 1,Cuoc song,10
+1,Hat giong tam hon 1,Cuoc song,9
 2,Giai tich 2,Dai cuong,98
 3,Kinh doanh thoi dai moi,Kinh doanh,4
-4,SQL,Tin hoc,10
+4,SQL,Tin hoc,11
 5,JavaScript,Tin hoc,5
 6,Microsoft .NET,Tin hoc,9
-7,OOP in Java,Tin hoc,10
+7,OOP in Java,Tin hoc,11
 8,C++ Advance,Tin hoc,122
 9,Information system,Tin hoc,4
 10,English - Vietnamese Dictionary,Tu dien,4
@@ -17,12 +17,12 @@ Ma Sach,Ten sach,The loai,1
 16,Artifical Intelligence,Tin hoc,24
 17,Yeu thuong ai cung nhu ai,Cuoc song,4
 18,Tu duy ky thuat so,Tin hoc,2
-19,5.0 in the furture,Tin hoc,4
+19,5.0 in the furture,Tin hoc,5
 20,G102 - Logitech,Huong dan,6
 21,yAyusi,Huong dan,3
 22,Mobiistar - dien thoai,Huong dan,5
 23,Vat Ly,Dai cuong,0
-24,Giai tich 1,Dai cuong,1
+24,Giai tich 1,Dai cuong,0
 25,Solution E1,Anh van,7
 26,FBI - USA,Trinh tham,55
 27,Vat Ly 2,Dai cuong,9
@@ -32,10 +32,10 @@ Ma Sach,Ten sach,The loai,1
 31,Lich Su Van Minh The Gioi,Lich su,1
 32,Du Hanh Nam Ha,Lich su,2
 33,Can Ham Toi,Trinh tham,5
-34,Hoi Tho Cuoi Cung,Trinh tham,10
+34,Hoi Tho Cuoi Cung,Trinh tham,11
 35,Du Lieu Tu Than,Trinh tham,10
-36,Sherlock Homes - tap 1,Trinh tham,12
-37,Sherlock Homes - tap 2,Trinh tham,11
+36,Sherlock Homes - tap 1,Trinh tham,11
+37,Sherlock Homes - tap 2,Trinh tham,10
 38,Sherlock Homes - tap 3,Trinh tham,16
-39,Dam That Bai,Kinh doanh,17
-40,Kinh Te 4,Kinh doanh,1
+39,Dam That Bai,Kinh doanh,15
+40,Kinh Te 4,Kinh doanh,0

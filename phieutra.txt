@@ -1,10 +1,13 @@
 Phieu tra sach
 =============================
-Ho ten: An Sang Dung
+Ho ten: Ton That Hai
 Ma so sach:    Ten sach: 
-3              Kinh doanh thoi dai moi
-9              Information system
-Ngay tra: 16/5/2021
+34             Hoi Tho Cuoi Cung
+1              Hat giong tam hon 1
+7              OOP in Java
+4              SQL
+19             5.0 in the furture
+Ngay tra: 21/5/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

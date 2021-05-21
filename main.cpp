@@ -56,7 +56,7 @@ void dangky(){
 	fflush(stdin);GoTo(11,9);cout << "Nhap ho ten cua ban: "; getline(cin,st);
 	fstream fout;	fout.open("data.csv", ios::out | ios::app);
 	hocsinh tam;
-	fout << tk << "," << mk << "," << st << ",0;" << endl; 
+	fout << tk << "," << mk << "," << st << ",0;" << endl; fout.close();
 	tam.setUserName(tk);tam.setPassword(mk);tam.hoten = st;tam.borrow = "0;";
 	hs.push_back(tam);
 	sohs++;
