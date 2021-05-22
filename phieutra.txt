@@ -2,12 +2,12 @@ Phieu tra sach
 =============================
 Ho ten: Ton That Hai
 Ma so sach:    Ten sach: 
-34             Hoi Tho Cuoi Cung
-1              Hat giong tam hon 1
 7              OOP in Java
-4              SQL
-19             5.0 in the furture
-Ngay tra: 21/5/2021
+40             Kinh Te 4
+41             Naruto
+8              C++ Advance
+17             Yeu thuong ai cung nhu ai
+Ngay tra: 22/5/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten
