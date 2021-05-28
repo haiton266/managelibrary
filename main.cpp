@@ -209,6 +209,7 @@ void dangnhap()
 };
 int main()
 {
+	SetColor(0,7);
 	system("title Quan ly thu vien - Gr6 - 20KTMT1");
 
 	docfile(hs, sohs, sach, sosach);
@@ -217,16 +218,16 @@ int main()
 	SetColor(0, 4);
 	GoTo(10, 2);
 	cout << "QUAN LY THU VIEN";
-
-	GoTo(75, 25);
-	cout << "San pham cua nhom 6 - 20KTMT1:";
-	GoTo(78, 26);
-	cout << (char)175 << " Ton That Hai";
-	GoTo(78, 27);
-	cout << (char)175 << " Ngo Xuan Sy";
-	GoTo(78, 28);
-	cout << (char)175 << " Le Pham Cong";
-	SetColor(0, 7);
+//
+//	GoTo(75, 25);
+//	cout << "San pham cua nhom 6 - 20KTMT1:";
+//	GoTo(78, 26);
+//	cout << (char)175 << " Ton That Hai";
+//	GoTo(78, 27);
+//	cout << (char)175 << " Ngo Xuan Sy";
+//	GoTo(78, 28);
+//	cout << (char)175 << " Le Pham Cong";
+//	SetColor(0, 7);
 	SetColor(0, 9);
 	//SetConsoleOutputCP(65001);
 	GoTo(11, 5);

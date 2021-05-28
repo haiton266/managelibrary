@@ -1,0 +1,4 @@
+Chạy chương trình: chạy main.exe
+Muốn biên dịch và chạy: 
+- Nếu dùng devC++ thì chuyển sang GNU C++11
+- Chương trình có Set Background nên có thể lỗi ở 1 số màn hình, nếu có vấn đề gì liên lạc qua : haitt.bkdn@gmail.com
