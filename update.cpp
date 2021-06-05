@@ -11,13 +11,10 @@ void update(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach, int 
 	fin.close();
 	fout.close();
 
-	// removing the existing file
 	remove("data.csv");
 
-	// renaming the updated file with the existing file name
 	rename("datanew.csv", "data.csv");
-	// SACH
-//	fstream fin, fout;
+
 	fin.open("danhsachsach.csv", ios::in);
 	fout.open("danhsachsachnew.csv", ios::out);
 	for (int i=0;i<=sosach;i++)
@@ -27,12 +24,10 @@ void update(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach, int 
 	fin.close();
 	fout.close();
 
-	// removing the existing file
 	remove("danhsachsach.csv");
 
-	// renaming the updated file with the existing file name
 	rename("danhsachsachnew.csv", "danhsachsach.csv");
-	// SACH
+
 }
 void update2(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,map<string,int> chk){
 	fstream fin, fout;
@@ -46,10 +41,7 @@ void update2(vector<hocsinh> &hs,long &sohs,vector<book> &sach,long &sosach,map<
 	fin.close();
 	fout.close();
 
-	// removing the existing file
 	remove("data.csv");
-
-	// renaming the updated file with the existing file name
 	rename("datanew.csv", "data.csv");
 	
 }

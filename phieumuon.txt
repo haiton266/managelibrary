@@ -2,9 +2,8 @@ Phieu muon sach
 =============================
 Ho ten: Ton That Hai
 Ma so sach:    Ten sach: 
-40             Kinh Te 4
-41             Naruto
-Ngay muon: 22/5/2021
+20             G102 - Logitech
+Ngay muon: 5/6/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

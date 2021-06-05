@@ -408,7 +408,9 @@ void us2(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long sosach, int h
 				SetColor(0, 9);
 				cout << hs[i].hoten;
 				SetColor(0, 7);
-				cout << " , ban chua muon quyen sach nao!" << endl;
+				cout << " , ban chua muon quyen sach nao! Ban se duoc tra ve man hinh chinh trong 2s" << endl;
+				Sleep( 2000 );
+				c=3;
 			}
 			else
 			{
@@ -774,8 +776,7 @@ void user(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach, int
 		}
 		if (c == 3)
 		{
-
-			system("cls");
+		//	system("cls");
 			user(hs, sohs, sach, sosach, h);
 		}
 

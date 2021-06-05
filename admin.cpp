@@ -370,7 +370,7 @@ void ad2(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
 void ad3(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
 {
 
-	int sl[sosach + 1];
+	int sl[sosach*2];
 	int T = 0;
 	for (int i = 1; i <= sosach; i++)
 	{
@@ -402,22 +402,26 @@ void ad3(vector<hocsinh> hs, long sohs, vector<book> sach, long sosach)
 	SetColor(0, 7);
 	cout << "________________________________________________________________________________" << endl;
 	string st;
+	//cout << sosach << endl;
 	for (int i = 1; i <= sohs; i++)
 	{
 		st = hs[i].borrow;
 		string sst;
-		for (int i = 0; i < st.length(); i++)
-			if (st[i] == ';')
+		for (int j = 0; j < st.length(); j++)
+			if (st[j] == ';')
 			{
-				int num = stoi(sst);
+				int num = stoi(sst);//cout << num << " ";
 				sl[num] = sl[num] + 1;
 				sst = "";
 			}
 			else
-				sst = sst + st[i];
+				sst = sst + st[j];
 	};
+	
+	//	cout << "van dung";
 	kk = 0;
 	tam = new book2[sosach + 1];
+
 	for (int j = 1; j <= sosach; j++)
 	{
 		if (sl[j] != 0)

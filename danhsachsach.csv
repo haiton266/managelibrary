@@ -1,6 +1,6 @@
 Ma Sach,Ten sach,The loai,1
 1,Hat giong tam hon 1,Cuoc song,8
-2,Giai tich 2,Dai cuong,95
+2,Giai tich 2,Dai cuong,94
 3,Kinh doanh thoi dai moi,Kinh doanh,3
 4,SQL,Tin hoc,9
 5,JavaScript,Tin hoc,6
@@ -18,14 +18,14 @@ Ma Sach,Ten sach,The loai,1
 17,Yeu thuong ai cung nhu ai,Cuoc song,6
 18,Tu duy ky thuat so,Tin hoc,2
 19,5.0 in the furture,Tin hoc,5
-20,G102 - Logitech,Huong dan,6
+20,G102 - Logitech,Huong dan,5
 21,yAyusi,Huong dan,3
 22,Mobiistar - dien thoai,Huong dan,4
 23,Vat Ly,Dai cuong,0
 24,Giai tich 1,Dai cuong,1
-25,Solution E1,Anh van,7
+25,Solution E1,Anh van,6
 26,FBI - USA,Trinh tham,55
-27,Vat Ly 2,Dai cuong,9
+27,Vat Ly 2,Dai cuong,8
 28,Vat Ly ban dan,Dai cuong,9
 29,Linh kien dien tu,Dien tu,21
 30,Trieu Dai Viet Nam,Lich su,3
@@ -38,6 +38,7 @@ Ma Sach,Ten sach,The loai,1
 37,Sherlock Homes - tap 2,Trinh tham,11
 38,Sherlock Homes - tap 3,Trinh tham,16
 39,Dam That Bai,Kinh doanh,16
-40,Kinh Te 4,Kinh doanh,1
+40,Kinh Te 4,Kinh doanh,0
 41,Naruto,Truyen tranh,29
 42,Clock - G - Shock,Dong HO,1
+43,ABC,Truyen tranh,2
