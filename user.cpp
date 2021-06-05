@@ -255,8 +255,9 @@ void muon(vector<hocsinh> &hs, long &sohs, vector<book> &sach, long &sosach, int
 
 			cout << " " << (char)16 << (char)16;
 			cin >> ms;
+		//	cout << "so sach" << sosach;
 			//while ((kt[ms] == true) || (sach[ms].amount == "0") || ms <= 0 || ms > sosach)
-			while ((ms <= 0) || (kt[ms] == true) || (sach[ms].amount == "0") || (ms > sosach))
+			while ((ms > sosach) || (ms <= 0) || (kt[ms] == true) || (sach[ms].amount == "0"))
 			{
 				SetColor(0, 4);
 				cout << "Ban can nhap dung theo yeu cau, nhap lai ma: " << endl;

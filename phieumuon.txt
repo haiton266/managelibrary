@@ -1,8 +1,8 @@
 Phieu muon sach
 =============================
-Ho ten: Ton That Hai
+Ho ten: a
 Ma so sach:    Ten sach: 
-20             G102 - Logitech
+43             ABC
 Ngay muon: 5/6/2021
                              
 =============================
