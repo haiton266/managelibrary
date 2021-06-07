@@ -1,9 +1,9 @@
 Phieu muon sach
 =============================
-Ho ten: a
+Ho ten: Ton That Hai
 Ma so sach:    Ten sach: 
-43             ABC
-Ngay muon: 5/6/2021
+35             Du Lieu Tu Than
+Ngay muon: 7/6/2021
                              
 =============================
 Nguoi muon ky va ghi ro ho ten

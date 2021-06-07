@@ -1,5 +1,5 @@
-Ma Sach,Ten sach,The loai,1
-1,Hat giong tam hon 1,Cuoc song,8
+Ma Sach,Ten sach,The loai,2
+1,Hat giong tam hon 1,Cuoc song,7
 2,Giai tich 2,Dai cuong,94
 3,Kinh doanh thoi dai moi,Kinh doanh,3
 4,SQL,Tin hoc,9
@@ -22,7 +22,7 @@ Ma Sach,Ten sach,The loai,1
 21,yAyusi,Huong dan,3
 22,Mobiistar - dien thoai,Huong dan,4
 23,Vat Ly,Dai cuong,0
-24,Giai tich 1,Dai cuong,1
+24,Giai tich 1,Dai cuong,0
 25,Solution E1,Anh van,6
 26,FBI - USA,Trinh tham,55
 27,Vat Ly 2,Dai cuong,8
@@ -37,8 +37,10 @@ Ma Sach,Ten sach,The loai,1
 36,Sherlock Homes - tap 1,Trinh tham,12
 37,Sherlock Homes - tap 2,Trinh tham,11
 38,Sherlock Homes - tap 3,Trinh tham,16
-39,Dam That Bai,Kinh doanh,16
+39,Dam That Bai,Kinh doanh,15
 40,Kinh Te 4,Kinh doanh,0
 41,Naruto,Truyen tranh,29
-42,Clock - G - Shock,Dong HO,1
-43,ABC,Truyen tranh,1
+42,Clock - G - Shock,Dong HO,0
+43,ABC,Truyen tranh,0
+44,AI,Tin hoc,5
+45,AII,Tin hoc,9
